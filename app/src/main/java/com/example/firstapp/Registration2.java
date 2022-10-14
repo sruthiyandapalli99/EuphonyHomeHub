@@ -2,10 +2,9 @@ package com.example.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity2 extends AppCompatActivity {
+public class Registration2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
