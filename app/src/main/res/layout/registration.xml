@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration2"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="57dp">
+
+    <EditText
+        android:id="@+id/enteremail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Email"
+        android:layout_marginTop="25dp"
+
+
+       />
+
+    <EditText
+        android:id="@+id/flatnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Flatnumber"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/enteremail"
+         />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Username"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/flatnumber"
+        />
+
+    <EditText
+        android:id="@+id/profession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your profession"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/username"
+        />
+
+    <EditText
+        android:id="@+id/passwordnew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="New Password"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/profession"
+
+         />
+
+    <EditText
+        android:id="@+id/confirmpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ReEnter password"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/passwordnew"
+        />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register Now"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/confirmpassword"
+
+        />
+</RelativeLayout>
