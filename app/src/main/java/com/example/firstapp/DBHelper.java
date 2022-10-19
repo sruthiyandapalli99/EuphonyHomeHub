@@ -14,12 +14,12 @@ public class DBHelper extends SQLiteOpenHelper {
     //public static final int DB_VERSION = 1;
 
     public DBHelper(Context context) {
-        super(context,  "sruthi.db", null,  1);
+        super(context, "sruthi.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-       MyDB.execSQL("Create Table  customers  (_ID INTEGER PRIMARY KEY AUTOINCREMENT,  EMAIL TEXT,  NAME TEXT,  FLATNUMBER INTEGER,  PROFESSION TEXT,  PASSWORD INTEGER)");
+        MyDB.execSQL("Create Table  customers  (_ID INTEGER PRIMARY KEY AUTOINCREMENT,  EMAIL TEXT,  NAME TEXT,  FLATNUMBER INTEGER,  PROFESSION TEXT,  PASSWORD INTEGER)");
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(MyDB);
     }
 
-    public Boolean insertvalues( String emaill, String usernamee, String flatnum, String professionn, String passcode){
+    public Boolean insertvalues(String emaill, String usernamee, String flatnum, String professionn, String passcode) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues customerdetails = new ContentValues();
         customerdetails.put("EMAIL", emaill);
@@ -36,33 +36,55 @@ public class DBHelper extends SQLiteOpenHelper {
         customerdetails.put("FLATNUMBER", flatnum);
         customerdetails.put("PROFESSION", professionn);
         customerdetails.put("PASSWORD", passcode);
-        long result =MyDB.insert("customers", null, customerdetails);
-        if(result==-1) return false;
+        long result = MyDB.insert("customers", null, customerdetails);
+        if (result == -1) return false;
         else
             return true;
     }
-    public Boolean checkemailid(String entermail){
+
+    public Boolean checkemailid(String EMAIL) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.query("customers", new String[] {"EMAIL"}, null,null,null,null,null);
-        if(cursor.getCount()>0)
+       // Cursor cursor = MyDB.query("customers", new String[]{"EMAIL"}, null, null, null, null, null);
+        Cursor cursor = MyDB.rawQuery("Select * from customers where EMAIL = ?" , new String[] {EMAIL});
+
+        if (cursor.getCount() > 0)
             return true;
         else
             return false;
     }
-    public Boolean Checkuemailpassword(String email, String password){
+
+    public Boolean Checkuemailpassword(String EMAIL, String PASSWORD) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-       // Cursor cursor = MyDB.rawQuery("Select * from customers ", new String[] {username, password});
+        // Cursor cursor = MyDB.rawQuery("Select * from customers ", new String[] {username, password});
         /*if(cursor.getCount()>0)
             return true;
         else
             return  false;*/
-        Cursor cursor = MyDB.query("customers", new String[] {"EMAIL", "PASSWORD"}, null,null,null,null,null);
-        if(email.equals("EMAIL") && password.equals("PASSWORD"))
+        //Cursor cursor = MyDB.query("customers", new String[]{"EMAIL", "PASSWORD"}, null, null, null, null, null);
+        Cursor cursor = MyDB.rawQuery("Select * from customers where EMAIL = ? and PASSWORD = ?", new String[] {EMAIL,PASSWORD});
+
+        /*while (cursor.getCount() > 0) {
+            if (email.equals("EMAIL") && password.equals("PASSWORD"))
+                return true;
+            else
+                return false;
+        }*/
+
+        if (cursor.getCount()>0) {
+
+           // if( password.equals("PASSWORD"))
             return true;
+
+        }
         else
-            return  false;
+        return  false;
+
+
+
+        }
     }
 
 
 
-}
+
+
