@@ -14,7 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //public static final int DB_VERSION = 1;
 
     public DBHelper(Context context) {
-        super(context,  "Login.db", null,  2);
+        super(context,  "sruthi.db", null,  1);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return  false;*/
         Cursor cursor = MyDB.query("customers", new String[] {"EMAIL", "PASSWORD"}, null,null,null,null,null);
-        if(cursor.getCount()>0)
+        if(email.equals("EMAIL") && password.equals("PASSWORD"))
             return true;
         else
             return  false;
