@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "542555043151",
+    "project_id": "euphony-4034d",
+    "storage_bucket": "euphony-4034d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542555043151:android:fd53ffbe99a644f02bc13a",
+        "android_client_info": {
+          "package_name": "com.example.firstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542555043151-qp40i1c0iu674q4bu841dbvjst3f82o3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firstapp",
+            "certificate_hash": "4fd2b1a243022bd2657dc5ee23a55e8cc347175b"
+          }
+        },
+        {
+          "client_id": "542555043151-pooggrkvgji8co3dr98hmkc0g8kv5k4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5jzx0uVyPqlENG5gKm8gYJTQeNoS2Apo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542555043151-pooggrkvgji8co3dr98hmkc0g8kv5k4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
